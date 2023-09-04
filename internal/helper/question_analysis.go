@@ -1,6 +1,6 @@
 package helper
 
-import "gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
+import "github.com/hanifmaliki/rig-checklist-backend/internal/model"
 
 func QuestionAnalysis(question *model.Question) {
 	question.QuestionAnalysis = &model.QuestionAnalysis{}

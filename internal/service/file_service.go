@@ -4,8 +4,8 @@ import (
 	"io"
 	"mime/multipart"
 
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/minio"
 	"github.com/rs/zerolog/log"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/minio"
 )
 
 type FileService interface {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/service"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/service"
 )
 
 func AuthRouter(app fiber.Router, privateKey *rsa.PrivateKey) {

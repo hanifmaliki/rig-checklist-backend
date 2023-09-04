@@ -1,7 +1,7 @@
 package migrations
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
 
 	"github.com/go-gormigrate/gormigrate/v2"
 	"gorm.io/gorm"

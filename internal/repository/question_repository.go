@@ -5,9 +5,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/helper"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/persistence"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/helper"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/persistence"
 )
 
 type QuestionRepository interface {

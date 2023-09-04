@@ -1,9 +1,9 @@
 package seeds
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/helper"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/service"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/helper"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/service"
 
 	"gorm.io/gorm"
 )

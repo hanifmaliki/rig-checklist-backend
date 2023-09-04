@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/migration"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/logger"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/migration"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/logger"
 
 	"github.com/joho/godotenv"
 	"github.com/rs/zerolog/log"

@@ -3,9 +3,9 @@ package migration
 import (
 	"os"
 
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/migration/migrations"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/migration/seeds"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/persistence"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/migration/migrations"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/migration/seeds"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/persistence"
 
 	"github.com/go-gormigrate/gormigrate/v2"
 	"github.com/rs/zerolog/log"

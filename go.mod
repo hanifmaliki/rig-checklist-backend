@@ -1,6 +1,6 @@
-module gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva
+module github.com/hanifmaliki/rig-checklist-backend
 
-go 1.20
+go 1.21.0
 
 require (
 	github.com/go-gormigrate/gormigrate/v2 v2.0.2
@@ -13,6 +13,7 @@ require (
 	github.com/minio/minio-go/v7 v7.0.50
 	github.com/rs/zerolog v1.29.0
 	github.com/wei840222/gorm-zerolog v0.0.0-20210303025759-235c42bb33fa
+	golang.org/x/crypto v0.7.0
 	gorm.io/driver/mysql v1.4.7
 	gorm.io/driver/postgres v1.4.8
 	gorm.io/gorm v1.24.5
@@ -52,7 +53,6 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.45.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/crypto v0.7.0 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect

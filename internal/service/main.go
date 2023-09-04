@@ -3,7 +3,7 @@ package service
 import (
 	"sync"
 
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/repository"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/repository"
 )
 
 var (

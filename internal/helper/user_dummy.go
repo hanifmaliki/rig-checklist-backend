@@ -1,6 +1,6 @@
 package helper
 
-import "gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
+import "github.com/hanifmaliki/rig-checklist-backend/internal/model"
 
 var UserDummy = &model.User{
 	Name:     "Hanif Maliki Dewanto",

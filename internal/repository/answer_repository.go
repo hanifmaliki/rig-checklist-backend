@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/persistence"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/persistence"
 
 	"gorm.io/gorm"
 )

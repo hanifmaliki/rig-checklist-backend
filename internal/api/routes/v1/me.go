@@ -2,7 +2,7 @@ package v1
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
 )
 
 func HiRouter(app fiber.Router, jwt *func(*fiber.Ctx) error) {

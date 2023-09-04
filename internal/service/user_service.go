@@ -1,8 +1,8 @@
 package service
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/helper"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/model"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/helper"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/model"
 )
 
 type UserService interface {

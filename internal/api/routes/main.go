@@ -1,15 +1,15 @@
 package routes
 
 import (
-	v1_router "gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/api/routes/v1"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/healthz_router"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/middleware"
+	v1_router "github.com/hanifmaliki/rig-checklist-backend/internal/api/routes/v1"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/healthz_router"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/middleware"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/requestid"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/api/config"
-	pk "gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/private_key"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/api/config"
+	pk "github.com/hanifmaliki/rig-checklist-backend/pkg/private_key"
 )
 
 func Init(app fiber.Router, appConfig *config.Config) {

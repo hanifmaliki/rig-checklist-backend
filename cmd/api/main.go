@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/api/config"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/api/routes"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/error_handler"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/logger"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/api/config"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/api/routes"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/error_handler"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/logger"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"

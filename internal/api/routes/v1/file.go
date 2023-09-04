@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/gofiber/fiber/v2"
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/internal/service"
+	"github.com/hanifmaliki/rig-checklist-backend/internal/service"
 )
 
 func FileRouter(app fiber.Router, jwt *func(*fiber.Ctx) error) {

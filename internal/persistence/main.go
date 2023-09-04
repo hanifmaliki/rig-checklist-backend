@@ -3,7 +3,7 @@ package persistence
 import (
 	"sync"
 
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/db/postgres"
+	"github.com/hanifmaliki/rig-checklist-backend/pkg/db/postgres"
 
 	"github.com/joho/godotenv"
 	"github.com/kelseyhightower/envconfig"
