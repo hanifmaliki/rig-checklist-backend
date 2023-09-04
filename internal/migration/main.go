@@ -14,7 +14,7 @@ import (
 
 func Init() {
 	// Initialize Database
-	db := persistence.Client().Minerva
+	db := persistence.Client().RigChecklist
 	db.Logger.LogMode(logger.Info)
 
 	// Starting migration of DB

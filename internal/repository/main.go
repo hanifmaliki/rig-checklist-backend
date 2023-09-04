@@ -1,13 +1,15 @@
 package repository
 
 type Repository interface {
-	UserPetrosRepository
-	HomeContentRepository
-	ProductRepository
-	ProductMenuRepository
-	CaseStudyRepository
-	CaseStudyMenuRepository
-	FooterRepository
+	UserRepository
+	RigRepository
+	LocationRepository
+	WellRepository
+	FieldRepository
+	ActivityRepository
+	FormRepository
+	QuestionRepository
+	AnswerRepository
 }
 
 type repository struct {

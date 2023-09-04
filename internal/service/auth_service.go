@@ -1,8 +1,7 @@
 package service
 
 import (
-	"errors"
-	"os"
+	"strings"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -12,35 +11,32 @@ import (
 
 type AuthService interface {
 	Login(login *model.Login) (*jwt.Token, error)
+	ChangePassword(user *model.User, oldPassword string, newPassword string) error
+
+	// Forgot Password
+	SendOTP(email string) error
+	VerifyOTP(email string, otp string) (*jwt.Token, error)
+	ResetPassword(user *model.User, newPassword string) error
 }
 
 func (s *service) Login(login *model.Login) (*jwt.Token, error) {
-	user := &model.User{}
-	if login.Username != os.Getenv("ADMIN_USERNAME") || login.Password != os.Getenv("ADMIN_PASSWORD") {
-		success, err := helper.LoginPetros(login.Username, login.Password)
-		if err != nil {
-			return nil, err
-		}
-		if !success {
-			return nil, errors.New("the username or password is incorrect")
-		}
-		userPetros, err := s.repository.ReadUserPetrosByUsername(login.Username)
-		if err != nil {
-			return nil, err
-		}
-		user.Username = userPetros.UserLogin
-		user.Name = userPetros.DisplayName
-		user.Email = userPetros.UserEmail
-	} else {
-		user.Username = login.Username
-		user.Name = helper.UserDummy.Name
-		user.Email = helper.UserDummy.Email
+	conds := map[string]interface{}{
+		"username": strings.ToLower(login.Username),
+	}
+	user, err := s.ReadUser(conds)
+	if err != nil {
+		return nil, err
+	}
+
+	err = helper.ComparePassword(user.Password, login.Password)
+	if err != nil {
+		return nil, err
 	}
 
 	// Create the Claims
 	claims := jwt.MapClaims{
-		"username": user.Username,
 		"name":     user.Name,
+		"username": user.Username,
 		"email":    user.Email,
 		"exp":      time.Now().Add(time.Hour * 72).Unix(),
 	}
@@ -48,4 +44,55 @@ func (s *service) Login(login *model.Login) (*jwt.Token, error) {
 	// Create token
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
 	return token, nil
+}
+
+func (s *service) ChangePassword(user *model.User, oldPassword string, newPassword string) error {
+	conds := map[string]interface{}{
+		"username": strings.ToLower(user.Username),
+	}
+	user, err := s.ReadUser(conds)
+	if err != nil {
+		return err
+	}
+
+	err = helper.ComparePassword(user.Password, oldPassword)
+	if err != nil {
+		return err
+	}
+
+	hashedPassword, err := helper.HashPassword(newPassword)
+	if err != nil {
+		return err
+	}
+	user.Password = hashedPassword
+
+	_, err = s.UpdateUser(user, user.ID, user)
+	return err
+}
+
+func (s *service) SendOTP(email string) error {
+	return nil
+}
+
+func (s *service) VerifyOTP(email string, otp string) (*jwt.Token, error) {
+	return nil, nil
+}
+
+func (s *service) ResetPassword(user *model.User, newPassword string) error {
+	conds := map[string]interface{}{
+		"username": strings.ToLower(user.Username),
+	}
+	user, err := s.ReadUser(conds)
+	if err != nil {
+		return err
+	}
+
+	hashedPassword, err := helper.HashPassword(newPassword)
+	if err != nil {
+		return err
+	}
+	user.Password = hashedPassword
+
+	_, err = s.UpdateUser(user, user.ID, user)
+	return err
 }

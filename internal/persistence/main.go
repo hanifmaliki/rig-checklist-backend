@@ -1,10 +1,9 @@
 package persistence
 
 import (
-	"regexp"
 	"sync"
 
-	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/db/mysql"
+	"gitlab.todcoe.com/todcoe/petros-website/corporate-website-minerva/pkg/db/postgres"
 
 	"github.com/joho/godotenv"
 	"github.com/kelseyhightower/envconfig"
@@ -13,8 +12,7 @@ import (
 )
 
 type clientList struct {
-	Minerva *gorm.DB
-	Petros  *gorm.DB
+	RigChecklist *gorm.DB
 }
 
 var (
@@ -22,17 +20,14 @@ var (
 	clients = &clientList{}
 )
 
-func generateClient(config Config) *gorm.DB {
+func generateClientPostgres(config Config) *gorm.DB {
 	err := envconfig.Process("", config)
 	if err != nil {
 		log.Fatal().Err(err).Msg("on populate DB config")
 	}
 
-	var regex, _ = regexp.Compile(`\)\/|\?`)
-	var dbName = regex.Split(config.GetDSN(), -1)[1]
-
-	client := mysql.GetClient(config.GetDSN())
-	log.Info().Msg("Connection to " + dbName + " DB opened")
+	client := postgres.GetClient(config.GetDSN())
+	log.Info().Msg("Connection to DB opened")
 	return client
 }
 
@@ -41,8 +36,7 @@ func init() {
 		if err := godotenv.Load(); err != nil {
 			log.Warn().Msg(err.Error())
 		}
-		clients.Minerva = generateClient(&MinervaConfig{})
-		clients.Petros = generateClient(&PetrosConfig{})
+		clients.RigChecklist = generateClientPostgres(&RigChecklistConfig{})
 	})
 }
 

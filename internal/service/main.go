@@ -12,13 +12,15 @@ var (
 )
 
 type Service interface {
+	UserService
 	AuthService
-	HomeContentService
-	ProductService
-	ProductMenuService
-	CaseStudyService
-	CaseStudyMenuService
-	FooterService
+	ActivityService
+	FieldService
+	LocationService
+	RigService
+	WellService
+	QuestionService
+	AnswerService
 	FileService
 }
 
